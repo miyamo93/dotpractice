@@ -1,6 +1,9 @@
 body{
   font-family: 'Courier New ', monospace;
 }
+li{
+  list-style: none;
+}
 
 #target{
   font-size:48px ;
@@ -46,5 +49,58 @@ body{
     width: 80px;
     height: 45px;
     line-height: 45px;
+  }
+}
+
+
+.quizapp{
+  width: 100vw;
+  height: 100vh;
+  background: #efdec1;
+  font-size: 14px;
+  font-family: Verdana, sans-serif;
+  padding-top: 8px;
+  box-sizing: border-box;
+}
+
+.quiz{
+  width: 400px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+#question{
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+#choices{
+  margin-bottom: 16px;
+  li{
+    border: 1px solid #000;
+    border-radius: 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover{
+      background: #f8f8f8;
+    }
+  }
+}
+
+#qbtn{
+  background: #3498db;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 8px 0 #2880b9;
+  &.disabled{
+    background: #cccccc;
+    box-shadow: 0 4px 0 #bbb;
+    opacity: 0.7;
   }
 }

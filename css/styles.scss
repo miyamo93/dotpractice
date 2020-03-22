@@ -36,3 +36,17 @@ body{
     margin-top: 35px;
   }
 }
+
+
+.testbox{
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto;
+  &__1{
+    border: 1px solid black;
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+  }
+}

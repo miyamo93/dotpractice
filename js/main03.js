@@ -12,20 +12,39 @@
   ]
   let currentNum = 0;
   
-  question.textContent = quizSet[currentNum].q;
+  
 
   function shuffle(arr){
     
     for (let i = arr.length - 1; i > 0; i--){
       const j = Math.floor(Math.random() * (i + 1));
-      [arr[j], arr[i] = arr[i],arr[j]];
+      [arr[j], arr[i]] = [arr[i],arr[j]];
     }
     return arr;
   }
 
-  quizSet[currentNum].c.forEach(choice => {
-    const li = document.createElement('li');
-    li.textContent = choice;
-    choices.appendChild(li)
-  });
+  function checkAnswer(li){
+    if (li.textContent === quizSet[currentNum].c[0]){
+      console.log('correct');
+    } else{
+      console.log('wrong');
+    }
+  }
+  
+
+  function setQuiz(){
+    question.textContent = quizSet[currentNum].q;
+
+    const shuffledChoices = shuffle([...quizSet[currentNum].c]);
+    console.log(quizSet[currentNum].c);
+    shuffledChoices.forEach(choice => {
+      const li = document.createElement('li');
+      li.textContent = choice;
+      li.addEventListener('click',() => {
+        checkAnswer(li);
+      });
+      choices.appendChild(li)
+    });
+  }
+  setQuiz();
 }
